@@ -1,13 +1,17 @@
 body {
   background-color: #3498db;
+  color: #34495e;
+}
+
+.container{
+  background-color: rgba(255, 255, 255,0.4);
+  width: 300px;
+  margin: 20px 10px;
+  padding: 20px; 
 }
 
 .btn {
   cursor: pointer;
-}
-
-body {
-  color: #34495e;
 }
 
 .clicked {
@@ -39,4 +43,8 @@ body {
   height: 100%;
   z-index: -1;
   animation: fadeIn 0.5s linear;
+}
+
+.js-weather {
+  font-size: 18px;
 }

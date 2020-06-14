@@ -9,9 +9,42 @@ function getWeather(lat, lon) {
       return response.json();
     })
     .then(function (json) {
+      const description = json.weather[0].description;
       const temperature = json.main.temp;
       const place = json.name;
-      weather.innerText = `${temperature} @ ${place}`;
+      let weatherIcon = "";
+      switch (description) {
+        case "clear sky":
+          weatherIcon = "🌞";
+          break;
+        case "few clouds":
+          weatherIcon = "🌤";
+          break;
+        case "scattered clouds":
+          weatherIcon = "🌥";
+          break;
+        case "broken clouds":
+          weatherIcon = "🌥";
+          break;
+        case "shower rain":
+          weatherIcon = "🌧";
+          break;
+        case "rain":
+          weatherIcon = "🌧";
+          break;
+        case "thunderstorm":
+          weatherIcon = "🌩";
+          break;
+        case "snow":
+          weatherIcon = "🌨";
+          break;
+        case "snow":
+          weatherIcon = "🌫";
+          break;
+        default:
+          break;
+      }
+      weather.innerText = `${weatherIcon} ${temperature}℃ @ ${place}`;
     });
 }
 function saveCoords(coordsObj) {
